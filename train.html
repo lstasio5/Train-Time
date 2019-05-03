@@ -9,19 +9,22 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
-</head>
+    <!-- Moment js -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+  </head>
 <body>
 
         <div class="jumbotron jumbotron-fluid">
                 <div class="container">
                   <h1 class ="display-4 center text-center">All Aboard</h1>
-                  <p class="lead text-center">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+                  <p class="lead text-center"></p>
                   
                 </div>
               </div>
         <div class="container">
                 <h3>Current Train Schedule</h3>
-                <h4>Current Time: </h4>
+                <h4 id="timenow">Current Time: </h4>
                 <table class="table">
                         <thead>
                           <tr>
@@ -37,19 +40,19 @@
                           <tr>
                             <th scope="row">Blue Line</th>
                             <td>North City</td>
-                            <td>45</td>
+                            <td id="startFreq1">45</td>
                             <td></td>
                           </tr>
                           <tr>
                             <th scope="row">Green Line</th>
                             <td>South City</td>
-                            <td>60</td>
+                            <td id= "startFrequency">60</td>
                             <td></td>
                           </tr>
                           <tr>
                             <th scope="row">Green Line</th>
                             <td>East City</td>
-                            <td>75</td>
+                            <td id= "startFrequency">75</td>
                             <td></td>
                           </tr>
                         </tbody>

@@ -12,6 +12,22 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 
+$( document ).ready(function() {
+  var currentTime = moment().calendar();
+  console.log(currentTime);
+
+  var displayDate = function () {
+    document.querySelector("#timenow").innerHTML = "Current Time:" + currentTime;
+ 
+  }
+
+  displayDate();
+
+});
+
+//To display next arrival times and minutes away in html
+
+
 //initial values
 
 var name = "";
@@ -36,7 +52,6 @@ $("#submit").on("click", function(event) {
     console.log(frequency);
 
 
-
 database.ref().push({
    name: name,
    destination: destination,
@@ -47,26 +62,27 @@ database.ref().push({
 
 });
 
- database.ref().on("child_added", function(snapshot) {
-   // storing the snapshot.val() in a variable for convenience
-   var sv = snapshot.val();
+// //  database.ref().on("child_added", function(snapshot) {
 
-   // Console.loging the last user's data
-   console.log(sv.name);
-   console.log(sv.destination);
-   console.log(sv.firstTime);
-   console.log(sv.frequency);
+//    var sv = childSnapshot.val();
 
-   // Change the HTML to reflect
-   $("#train-name").text(sv.name);
-   $("#destination").text(sv.destination);
-   $("firstTime").text(sv.firstTime);
-   $("#frequency").text(sv.frequency);
 
-   // Handle the errors
- }, function(errorObject) {
-   console.log("Errors handled: " + errorObject.code);
- });
+//    // Console.loging the last train
+//    console.log(sv.name);
+//    console.log(sv.destination);
+//    console.log(sv.firstTime);
+//    console.log(sv.frequency);
+
+//    // Change the HTML to reflect
+//    $("#train-name").text(sv.name);
+//    $("#destination").text(sv.destination);
+//    $("firstTime").text(sv.firstTime);
+//    $("#frequency").text(sv.frequency);
+
+//    // Error handling
+//  }, function(errorObject) {
+//    console.log("Errors handled: " + errorObject.code);
+//  });
 
 
 
